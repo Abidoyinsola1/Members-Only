@@ -1,0 +1,23 @@
+<div class="columns is-centered">
+<div class="column is-half"> 
+
+<h1 class="my-5">Posts</h1>
+    
+     
+    <% @posts.each do |post| %>
+     <div class="box">
+        <article class="media">
+            <div class="media-content">
+                <div class="content">
+                    <strong><%= post.title %></strong><br/>
+                    <% if user_signed_in? %>
+                    <small><%= post.user.email%></small><br/>
+                    <% end %>
+                    <p><%= post.body %></p>
+                </div>
+           </div>
+        </article>
+    </div>  
+    <% end %>
+</div>
+</div>
